@@ -56,7 +56,7 @@ public class SparkStreamingPulsarReceiverExample {
     System.out.println("\tTopic:\t" + inputTopic);
     System.out.println("\tSubscription:\t" + subscription);
 
-    SparkConf sparkConf = new SparkConf().setAppName("Pulsar Spark Example");
+    SparkConf sparkConf = new SparkConf().setAppName("Pulsar Spark Example").setMaster("local[*]");
 
     JavaStreamingContext jsc = new JavaStreamingContext(sparkConf, Durations.seconds(60));
 
